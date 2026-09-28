@@ -1,0 +1,445 @@
+/* ═══════════════════════════════
+   COMPONENTS — Topbar
+   ═══════════════════════════════ */
+
+.sb-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(5,6,8,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  gap: 16px;
+}
+
+/* Hamburger menu (mobile only) */
+.sb-topbar__menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--dur-fast);
+}
+
+.sb-topbar__menu:hover {
+  background: rgba(255,255,255,0.07);
+}
+
+@media (max-width: 768px) {
+  .sb-topbar__menu {
+    display: flex;
+  }
+}
+
+/* Search */
+.sb-topbar__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  flex: 1;
+  max-width: 360px;
+  transition: border-color var(--dur-fast);
+}
+
+.sb-topbar__search:focus-within {
+  border-color: rgba(45,212,191,0.55);
+  box-shadow: 0 0 0 3px rgba(45,212,191,0.10);
+}
+
+.sb-topbar__search-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.sb-topbar__search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  width: 100%;
+  letter-spacing: 0;
+}
+
+.sb-topbar__search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.sb-topbar__search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+
+.sb-topbar__search-clear:hover {
+  background: rgba(255,255,255,0.10);
+  color: var(--text-primary);
+}
+
+/* Search Results Dropdown */
+.sb-topbar__search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #10131A;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sb-topbar__search-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.sb-topbar__search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background var(--dur-fast);
+  text-align: left;
+}
+
+.sb-topbar__search-item:last-child {
+  border-bottom: none;
+}
+
+.sb-topbar__search-item:hover {
+  background: rgba(45,212,191,0.06);
+}
+
+.sb-topbar__search-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sb-topbar__search-item-id {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Right section */
+.sb-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Network badge */
+.sb-topbar__network {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+}
+
+.sb-topbar__network-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+.sb-topbar__network-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Wallet button */
+.sb-topbar__wallet {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background var(--dur-fast), border-color var(--dur-fast);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.sb-topbar__wallet:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.sb-topbar__wallet--connected {
+  gap: 6px;
+}
+
+.sb-topbar__wallet--warning {
+  background: rgba(245,158,11,0.1);
+  border-color: rgba(245,158,11,0.3);
+}
+
+.sb-topbar__wallet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.sb-topbar__wallet--warning .sb-topbar__wallet-dot {
+  background: var(--warning);
+}
+
+.sb-topbar__wallet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1;
+}
+
+.sb-topbar__wallet-addr {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.sb-topbar__wallet-bal {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+/* RainbowKit overrides for topbar context */
+.sb-topbar [data-rk] {
+  --rk-colors-accentColor: var(--accent);
+  --rk-colors-accentColorForeground: var(--bg-main);
+}
+
+/* RainbowKit — full dashboard theme override */
+
+/* CSS variable overrides */
+[data-rk] {
+  --rk-colors-modalBackground: var(--bg-surface);
+  --rk-colors-modalBorder: var(--glass-border);
+  --rk-colors-modalText: var(--text-primary);
+  --rk-colors-modalTextSecondary: var(--text-secondary);
+  --rk-colors-actionButtonBorder: var(--glass-border);
+  --rk-colors-actionButtonSecondaryBackground: var(--bg-card);
+  --rk-colors-closeButtonBackground: var(--bg-card);
+  --rk-colors-closeButtonBorder: var(--glass-border);
+  --rk-colors-selectedOptionBorder: var(--accent-border);
+  --rk-colors-menuItemBackground: var(--bg-card);
+  --rk-colors-accentColor: var(--accent);
+  --rk-colors-accentColorForeground: var(--bg-main);
+  --rk-colors-connectButtonBackground: var(--bg-surface);
+  --rk-colors-connectButtonBackgroundError: var(--status-danger);
+  --rk-colors-connectButtonText: var(--text-primary);
+  --rk-colors-connectButtonTextError: var(--text-primary);
+  --rk-colors-profileAction: var(--bg-card);
+  --rk-colors-profileActionHover: var(--bg-card-hover);
+  --rk-colors-profileForeground: var(--text-primary);
+}
+
+/* Overlay backdrop */
+.rk-overlay-container {
+  background: rgba(0,0,0,0.6) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* ALL elements inside modal — nuke default styles */
+.rk-overlay-container [data-rk],
+.rk-overlay-container [data-rk] *,
+.rk-overlay-container [data-rk] *::before,
+.rk-overlay-container [data-rk] *::after {
+  border-color: var(--glass-border) !important;
+}
+
+/* Modal dialog container */
+.rk-overlay-container [data-rk] > div {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  overflow: hidden !important;
+}
+
+/* Modal inner sections */
+.rk-overlay-container [data-rk] > div > div {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Profile / account section */
+.rk-overlay-container [data-rk] img {
+  border-radius: 50% !important;
+  border: 2px solid var(--glass-border) !important;
+}
+
+/* Balance text */
+.rk-overlay-container [data-rk] div[style*="font-size"],
+.rk-overlay-container [data-rk] span {
+  color: var(--text-primary) !important;
+  font-family: var(--font-mono) !important;
+}
+
+/* Address display */
+.rk-overlay-container [data-rk] button + div,
+.rk-overlay-container [data-rk] button + span {
+  color: var(--text-secondary) !important;
+}
+
+/* ALL buttons in modal */
+.rk-overlay-container [data-rk] button,
+.rk-overlay-container [data-rk] a[role="button"],
+.rk-overlay-container [data-rk] a {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  padding: 12px 16px !important;
+  transition: background var(--dur-fast), border-color var(--dur-fast) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+.rk-overlay-container [data-rk] button:hover,
+.rk-overlay-container [data-rk] a[role="button"]:hover,
+.rk-overlay-container [data-rk] a:hover {
+  background: var(--bg-card-hover) !important;
+  border-color: var(--glass-border-hover) !important;
+}
+
+/* Close button */
+.rk-overlay-container [data-rk] button[aria-label="Close"],
+.rk-overlay-container [data-rk] button[aria-label="close"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Action buttons (Disconnect, Copy, etc) */
+.rk-overlay-container [data-rk] button + button,
+.rk-overlay-container [data-rk] div > button + button {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 10px !important;
+}
+
+/* Menu items / options list */
+.rk-overlay-container [data-rk] div[role="menu"],
+.rk-overlay-container [data-rk] ul {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.rk-overlay-container [data-rk] div[role="menuitem"],
+.rk-overlay-container [data-rk] li {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+.rk-overlay-container [data-rk] div[role="menuitem"]:hover,
+.rk-overlay-container [data-rk] li:hover {
+  background: var(--bg-card) !important;
+}
+
+/* Scrollbar in modal */
+.rk-overlay-container [data-rk] ::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.rk-overlay-container [data-rk] ::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.08) !important;
+  border-radius: 2px !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .sb-topbar {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .sb-topbar__search {
+    max-width: none;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sb-topbar__network {
+    display: none;
+  }
+
+  .sb-topbar__wallet {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .sb-topbar__wallet-bal {
+    display: none;
+  }
+}

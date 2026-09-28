@@ -1,0 +1,51 @@
+/* ═══════════════════════════════
+   COMPONENTS — Badges
+   ═══════════════════════════════ */
+
+.sb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.sb-badge--active {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: #99F6E4;
+}
+
+.sb-badge--ended-warn {
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.35);
+  color: #FCD34D;
+}
+
+.sb-badge--finalized {
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.35);
+  color: #86EFAC;
+}
+
+/* Inline status (used in table cells) */
+.sb-status-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Timer badges */
+.timer-urgent {
+  color: var(--warning);
+  font-family: var(--font-mono);
+  animation: pulse 1.5s infinite;
+}
+
+.timer-normal {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}

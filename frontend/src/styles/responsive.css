@@ -1,0 +1,140 @@
+/* ═══════════════════════════════
+   RESPONSIVE — all breakpoints
+   consolidated here, nowhere else
+   ═══════════════════════════════ */
+
+/* ── 1024px ── */
+@media (min-width: 1024px) {
+  .sb-detail-actions {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* ── 768px ── */
+@media (max-width: 768px) {
+  .sb-create-layout { grid-template-columns: 1fr; }
+  .sb-active-hero { grid-template-columns: 1fr; }
+  .sb-create-summary { order: -1; position: static; }
+
+  /* Mobile sidebar */
+  .sb-sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--dur-normal) var(--ease);
+    z-index: 100;
+  }
+
+  .sb-sidebar:not(.sb-sidebar--collapsed) {
+    transform: translateX(0);
+  }
+
+  .sb-dashboard-layout__main {
+    margin-left: 0 !important;
+  }
+
+  .sb-dashboard-layout__main--collapsed {
+    margin-left: 0 !important;
+  }
+}
+
+/* ── 760px ── */
+@media (max-width: 760px) {
+  .sb-detail { padding-inline: 16px; }
+  .sb-detail-info { padding: 16px; }
+  .sb-detail-info__header { flex-direction: column; gap: 12px; }
+  .sb-detail-status { align-self: flex-start; }
+  .sb-detail-stats { grid-template-columns: 1fr; gap: 10px; }
+  .sb-detail .stats-card { padding: 16px; }
+  .sb-detail-highest,
+  .sb-detail-action-panel,
+  .sb-detail-info-box,
+  .sb-detail-empty-bids { padding: 16px; }
+  .sb-detail-highest__title { font-size: 18px; }
+  .sb-detail-highest__amount-value { font-size: 24px; }
+  .sb-detail-action-title { font-size: 16px; }
+  .sb-detail-action-btn { padding: 12px 14px; font-size: 14px; }
+  .sb-detail-form .sb-input { font-size: 16px; }
+  .sb-detail-deposit-notice { padding: 12px; }
+  .sb-detail-deposit-notice__header { font-size: 13px; }
+
+  .sb-active-page { padding: 80px 16px 48px; }
+  .sb-active-hero__copy,
+  .sb-active-hero__panel,
+  .sb-active-toolbar,
+  .sb-active-row { padding: 16px; }
+  .sb-active-toolbar { align-items: stretch; flex-direction: column; }
+  .sb-active-row { align-items: flex-start; }
+  .sb-active-row__head { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .sb-active-row__head h3 { white-space: normal; }
+}
+
+/* ── 640px ── */
+@media (max-width: 640px) {
+  /* Active auctions */
+  .sb-active-hero__copy { padding: 16px; }
+  .sb-active-hero h1 { font-size: 28px; line-height: 1.1; }
+  .sb-active-hero p { font-size: 14px; }
+  .sb-active-hero__panel { padding: 16px; min-height: auto; gap: 12px; }
+  .sb-active-hero__panel strong { font-size: 42px; }
+  .sb-active-hero__cta { padding: 12px 14px; font-size: 14px; }
+  .sb-active-toolbar { padding: 16px; flex-direction: column; align-items: stretch; gap: 12px; }
+  .sb-active-toolbar h2 { font-size: 18px; }
+  .sb-active-search { min-width: 100%; }
+  .sb-active-row { padding: 16px; gap: 12px; align-items: flex-start; }
+  .sb-active-row__icon { width: 40px; height: 40px; }
+  .sb-active-row__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .sb-active-row__head h3 { font-size: 15px; white-space: normal; }
+  .sb-active-row__meta { font-size: 12px; gap: 6px 10px; }
+
+  /* Create */
+  .sb-create-page { padding: 80px 16px 48px; }
+  .sb-create-title { font-size: 26px; }
+  .sb-create-subtitle { font-size: 14px; }
+  .sb-create-layout { grid-template-columns: 1fr; gap: 16px; }
+  .sb-create-form-card,
+  .sb-create-summary { padding: 16px; }
+  .sb-create-field-grid { grid-template-columns: 1fr; gap: 0; }
+  .sb-create-submit { padding: 14px 16px; font-size: 14px; }
+
+  /* Detail */
+  .sb-detail { padding: 80px 16px 48px; }
+
+  /* Search */
+  .sb-search__input { width: 100%; min-width: 0; }
+
+  /* Demo */
+  .sb-demo-header { padding: 32px 16px 0; text-align: left; }
+  .sb-demo-back { margin-bottom: 28px; }
+  .sb-demo-title { font-size: 38px; }
+  .sb-demo-subtitle { font-size: 15px; margin-left: 0; }
+  .sb-demo-highlights { justify-content: flex-start; }
+  .sb-demo-cta { justify-content: center; width: 100%; }
+  .sb-demo-divider { margin-top: 36px; }
+  .sb-demo-templates { padding-bottom: 56px; }
+  .sb-demo-grid { grid-template-columns: 1fr; }
+
+  /* Back to top */
+  .sb-back-to-top { bottom: 16px; right: 16px; width: 36px; height: 36px; }
+}
+
+/* ── 480px ── */
+@media (max-width: 480px) {
+  .sb-detail-info__title { font-size: 20px; }
+  .sb-active-hero__panel strong { font-size: 36px; }
+
+  .sb-404__card { padding: 36px 24px; }
+  .sb-404__code { font-size: 56px; }
+  .sb-404__actions { flex-direction: column; }
+  .sb-404__btn { width: 100%; justify-content: center; }
+}
+
+/* ── Mobile glass degradation ── */
+@media (max-width: 768px) {
+  .glass-card,
+  .glass-card-hover,
+  .stats-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bg-surface);
+  }
+}

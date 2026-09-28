@@ -1,0 +1,52 @@
+/* ═══════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════ */
+
+/* Focus visible — gold ring */
+:focus-visible {
+  outline: 2px solid rgba(201,146,42,0.7);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(201,146,42,0.7);
+  outline-offset: 2px;
+}
+
+.sb-nav__link:focus-visible,
+.sb-drawer__link:focus-visible,
+.sb-wallet-button:focus-visible {
+  outline: 2px solid rgba(201,146,42,0.7);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--gold-dim);
+}
+
+/* Active press feedback */
+button:active:not(:disabled),
+.btn-primary:active:not(:disabled),
+.btn-ghost:active:not(:disabled),
+.sb-nav__link:active,
+.sb-drawer__link:active,
+.sb-wallet-button:active,
+[role="button"]:active {
+  transform: scale(0.97) !important;
+  transition-duration: 0.05s !important;
+}
+
+.sb-card:active {
+  transform: scale(0.98) !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

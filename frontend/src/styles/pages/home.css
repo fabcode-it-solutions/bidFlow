@@ -1,0 +1,46 @@
+/* ═══════════════════════════════
+   Home Page — Shared Styles
+   (search, panel link — used by multiple pages)
+   ═══════════════════════════════ */
+
+/* ── Search (used by ActiveAuctions) ── */
+.sb-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sb-search__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  width: 200px;
+  font-family: inherit;
+}
+
+.sb-search__input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Panel link (used by dashboard tables) ── */
+.sb-panel__link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity var(--dur-fast);
+}
+
+.sb-panel__link:hover {
+  opacity: 0.8;
+}

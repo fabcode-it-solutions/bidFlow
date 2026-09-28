@@ -1,0 +1,63 @@
+/* ═══════════════════════════════
+   ANIMATIONS & KEYFRAMES
+   ═══════════════════════════════ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+
+@keyframes encryptScan {
+  0%   { width: 55%; opacity: 1; }
+  50%  { width: 82%; opacity: 0.65; }
+  100% { width: 55%; opacity: 1; }
+}
+
+@keyframes encryptDots {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+  100% { content: ''; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* Stagger utilities */
+.fade-in-up { animation: fadeInUp 400ms var(--ease-out) both; }
+.stagger-0 { animation: fadeInUp 450ms var(--ease-out) both; }
+.stagger-1 { animation: fadeInUp 450ms 75ms var(--ease-out) both; }
+.stagger-2 { animation: fadeInUp 450ms 150ms var(--ease-out) both; }
+.stagger-3 { animation: fadeInUp 450ms 225ms var(--ease-out) both; }
+.stagger-4 { animation: fadeInUp 450ms 300ms var(--ease-out) both; }
+
+.encrypt-dots::after {
+  content: '';
+  animation: encryptDots 1.2s steps(1, end) infinite;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "BidFlow",
+  "short_name": "BidFlow",
+  "description": "Sealed-bid auctions on-chain with Fully Homomorphic Encryption",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#f8fafc",
+  "background_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "/BidFlow.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/BidFlow.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

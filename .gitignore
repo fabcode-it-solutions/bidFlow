@@ -1,0 +1,8 @@
+node_modules
+.env
+.env.local
+/.docdex/
+/.docdex-state/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat

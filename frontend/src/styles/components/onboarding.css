@@ -1,0 +1,229 @@
+/* Onboarding Modal */
+
+.sb-onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: 16px;
+}
+
+.sb-onboarding-modal {
+  background: linear-gradient(180deg, #10131A 0%, #0C0E13 100%);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.sb-onboarding-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.sb-onboarding-close:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+}
+
+.sb-onboarding-content {
+  margin-bottom: 24px;
+  min-height: 220px;
+}
+
+/* Step */
+.sb-onboarding-step {
+  text-align: center;
+}
+
+.sb-onboarding-step__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.sb-onboarding-step__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Visuals */
+.sb-onboarding-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.sb-onboarding-visual__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sb-onboarding-visual__bid {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.sb-onboarding-visual__bid--public {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.20);
+  color: #FCA5A5;
+}
+
+.sb-onboarding-visual__bid--encrypted {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: #99F6E4;
+}
+
+.sb-onboarding-visual__label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sb-onboarding-visual__row--bot {
+  margin-top: 4px;
+}
+
+.sb-onboarding-visual__bot {
+  font-size: 12px;
+  color: var(--status-danger);
+  font-weight: 500;
+}
+
+/* Settlement flow */
+.sb-onboarding-visual__flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.sb-onboarding-visual__flow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.sb-onboarding-visual__flow-icon {
+  font-size: 16px;
+}
+
+.sb-onboarding-visual__flow-icon--accent {
+  color: var(--accent);
+}
+
+.sb-onboarding-visual__flow-arrow {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Dots */
+.sb-onboarding-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sb-onboarding-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.sb-onboarding-dot--active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+.sb-onboarding-dot:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Navigation */
+.sb-onboarding-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sb-onboarding-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sb-onboarding-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sb-onboarding-modal {
+    padding: 24px;
+  }
+
+  .sb-onboarding-step__title {
+    font-size: 18px;
+  }
+
+  .sb-onboarding-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sb-onboarding-actions .btn-secondary,
+  .sb-onboarding-actions .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}

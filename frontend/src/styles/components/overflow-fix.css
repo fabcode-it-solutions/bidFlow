@@ -1,0 +1,44 @@
+/* ═══════════════════════════════
+   COMPONENTS — Overflow Fix
+   ═══════════════════════════════ */
+
+/* Panel overflow protection */
+.sb-panel {
+  min-width: 0;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+/* Dashboard table overflow */
+.sb-dashboard-table-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Table horizontal scroll on mobile */
+@media (max-width: 640px) {
+  .sb-dashboard-table-card {
+    overflow-x: auto;
+  }
+
+  .sb-dashboard-table {
+    min-width: 480px;
+  }
+
+  .sb-detail-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Verification feed text wrap */
+  .sb-verification-feed__item {
+    font-size: 11px;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+}
+
+/* Page overflow */
+.sb-dashboard-layout__content {
+  overflow-x: hidden;
+  max-width: 100%;
+}

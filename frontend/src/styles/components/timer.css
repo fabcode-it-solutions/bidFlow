@@ -1,0 +1,125 @@
+/* ═══════════════════════════════
+   COMPONENTS — CountdownTimer
+   ═══════════════════════════════ */
+
+/* Status variants */
+.sb-timer--active { color: var(--gold); }
+.sb-timer--ending { color: var(--gold); }
+.sb-timer--ended  { color: var(--status-danger); }
+.sb-timer--finalizing { color: var(--status-success); }
+
+/* Compact */
+.sb-timer-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sb-timer-compact__text {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.sb-timer-compact__bar {
+  width: 64px;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--t4);
+}
+
+.sb-timer-compact__fill {
+  height: 100%;
+  transition: width 1s linear;
+  background: linear-gradient(90deg, var(--cipher), var(--gold));
+}
+
+/* Full */
+.sb-timer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sb-timer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+
+.sb-timer__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.sb-timer__ping {
+  position: relative;
+  display: inline-flex;
+  height: 8px;
+  width: 8px;
+}
+
+.sb-timer__ping-dot {
+  display: inline-flex;
+  border-radius: 50%;
+}
+
+.sb-timer__ping-dot--outer {
+  position: absolute;
+  inset: 0;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  background: var(--gold);
+  opacity: 0.75;
+}
+
+.sb-timer__ping-dot--inner {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+}
+
+.sb-timer__value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.05;
+  white-space: nowrap;
+  color: var(--t1);
+}
+
+.sb-timer__badge {
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.sb-timer__badge.sb-timer--active    { background: var(--gold-dim); border-color: rgba(201,146,42,0.2); }
+.sb-timer__badge.sb-timer--ending    { background: var(--gold-dim); border-color: rgba(201,146,42,0.2); }
+.sb-timer__badge.sb-timer--ended     { background: rgba(192,57,43,0.1); border-color: rgba(192,57,43,0.2); }
+.sb-timer__badge.sb-timer--finalizing { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); }
+
+.sb-timer__progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--t4);
+}
+
+.sb-timer__progress-fill {
+  height: 100%;
+  transition: width 1s linear;
+  background: linear-gradient(90deg, var(--cipher), var(--gold));
+}

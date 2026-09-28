@@ -1,0 +1,38 @@
+/* ═══════════════════════════════
+   COMPONENTS — Cards
+   ═══════════════════════════════ */
+
+/* Base card */
+.glass-card,
+.glass-card-hover {
+  background: linear-gradient(180deg, #10131A 0%, #0C0E13 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+  transition: border-color var(--dur-normal) var(--ease),
+              transform var(--dur-normal) var(--ease);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(45,212,191,0.28);
+  transform: translateY(-1px);
+}
+
+/* Stats card */
+.stats-card {
+  background: linear-gradient(180deg, #10131A 0%, #0C0E13 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+  transition: border-color var(--dur-normal) var(--ease),
+              transform var(--dur-normal) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-card:hover {
+  border-color: rgba(45,212,191,0.28);
+  transform: translateY(-1px);
+}

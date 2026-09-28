@@ -1,0 +1,54 @@
+/* ═══════════════════════════════
+   COMPONENTS — Forms
+   ═══════════════════════════════ */
+
+.sb-form-field {
+  margin-bottom: 20px;
+}
+
+.sb-form-label {
+  display: block;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.sb-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 14px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.sb-input::placeholder { color: var(--text-muted); }
+
+select.sb-input {
+  color-scheme: dark;
+}
+
+select.sb-input option {
+  background: var(--bg-raised);
+  color: var(--text-primary);
+}
+
+.sb-input:focus {
+  border-color: rgba(45,212,191,0.55);
+  box-shadow: 0 0 0 3px rgba(45,212,191,0.10);
+}
+
+.sb-input--textarea {
+  resize: vertical;
+  height: auto;
+  padding: 11px 14px;
+}
+
+.sb-input--mono { font-family: var(--font-mono); }
